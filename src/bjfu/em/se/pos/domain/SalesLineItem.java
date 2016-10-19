@@ -13,6 +13,7 @@ public class SalesLineItem {
 		this.desc=desc;
 		this.quantity=qty;
 	}
+	
 	public ProductDescription getProductDescription() {
 		return desc;
 	}

@@ -3,7 +3,6 @@ package bjfu.em.se.pos.ui;
 import java.awt.BorderLayout;
 import java.awt.Font;
 
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
