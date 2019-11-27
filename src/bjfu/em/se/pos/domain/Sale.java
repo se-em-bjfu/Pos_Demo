@@ -18,13 +18,33 @@ import bjfu.em.se.pos.domain.payment.PaymentType;
  *
  */
 public class Sale {
+	private long id;
 	private boolean isComplete=false;
 	private List<SalesLineItem> lineItems;
 	private Payment payment=null;
 	private Date date;
-	public Sale() {
+
+	public Sale(long id) {
+		this.id = id;
 		lineItems=new ArrayList<SalesLineItem> ();
 		date = new Date(); 
+	}
+
+	public Sale(long id, Date date, Payment payment, List<SalesLineItem> items) {
+		this.id = id;
+		this.date = date;
+		this.payment = payment;
+		this.lineItems = items;
+		this.isComplete = true;
+	}
+
+	/**
+	 * 销售的Id
+	 *
+	 * @return 本次销售的id
+	 */
+	public long getId() {
+		return id;
 	}
 	/**
 	 * 输入新的购买商品

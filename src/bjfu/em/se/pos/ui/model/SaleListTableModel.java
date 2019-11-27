@@ -1,17 +1,20 @@
 package bjfu.em.se.pos.ui.model;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.TimeZone;
 
 import javax.swing.table.AbstractTableModel;
 
 import bjfu.em.se.pos.domain.Sale;
 
 public class SaleListTableModel extends AbstractTableModel {
-
+	SimpleDateFormat dateFormat =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	private List<Sale> sales;
 
 	public SaleListTableModel(List<Sale> sales) {
 		super();
+		dateFormat.setTimeZone(TimeZone.getDefault());
 		this.sales = sales;
 	}
 
@@ -34,7 +37,7 @@ public class SaleListTableModel extends AbstractTableModel {
 		case 0:
 			return rowIndex+1;
 		case 1:
-			return sale.getDate();
+			return dateFormat.format(sale.getDate());
 		case 2:
 			return String.format("%.2f",(double)sale.getTotal()/100);
 		case 3:

@@ -23,7 +23,7 @@ public class Register {
 	 * 开始新销售
 	 */
 	public void startNewSale(){
-		currentSale=new Sale();		
+		currentSale=new Sale(store.nextSaleId());
 	}
 	/**
 	 * 输入购买的商品
