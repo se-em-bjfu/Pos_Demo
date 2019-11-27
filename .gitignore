@@ -3,5 +3,8 @@ target
 .idea
 *.iml
 *.db
+.classpath
+.project
+.settings
 /products.db
 /sales.db
